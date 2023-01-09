@@ -71,6 +71,7 @@ function execuatr() {
         }
 
         if (resultado) {
-            alert("Resultado: " + resultado)     }
+            alert("Resultado: " + resultado)
+             }
     } while (opcao !== "6")
 }
