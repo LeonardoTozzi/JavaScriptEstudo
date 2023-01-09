@@ -40,7 +40,7 @@ function exibirMenu() {
 }
 
 
-function execuatr() {
+function executar() {
     let opcao = ""
 
     do {
@@ -75,3 +75,5 @@ function execuatr() {
              }
     } while (opcao !== "6")
 }
+
+executar ()
