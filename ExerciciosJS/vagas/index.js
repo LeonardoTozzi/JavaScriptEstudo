@@ -47,3 +47,49 @@ function exibirVaga() {
         "\nCandidatos inscritos: " + candidatosEmTexto
     )
 }
+
+function inscreverCandidato() {
+    const candidato = prompt("Informe o nome do(a) candidato(a):")
+    const indice = prompt("Informe o índice de vaga para qual o(a) candidato(a) deseja se inscrever?")
+    const vaga = vagas [indice]
+
+    const confirmacao = confirm(
+        "Deseja inscrever o candidato " + candidato + " na vaga " + indice + "?\n" +
+        "Nome: " + vaga.nome + "\nDescrição: " + vaga.descricao + "\nData limite: " + vaga.dataLimite
+    )
+
+    if(confirmacao) {
+        vaga.candidatos.push(candidato)
+        alert("Inscrição reazlizada.")
+    }
+}
+
+function excluirVaga() {
+    const indice = pormpt("Informe o índice da vaga que deseja excluir:")
+    const vaga = vagas[indice]
+    
+    const confirmacao = confirm(
+        "Tem certeza que deseja excluir a vaga " + indice + "?\n" +
+        "Nome:"  + vaga.nome + "\nDescrição: " + vaga.descricao + "\nData limite: " + vaga.dataLimite 
+     )
+
+     if (confirmacao) {
+        vagas.splice(indice, 1)
+        alert("Vaga excluída.")
+     }
+}
+
+function exibirMenu() {
+    const opcao = prompt(
+        "Cadastro de Vagas de Emprego" +
+        "\n\nEscolha uma das opções" +
+        "\n1. Listar vagas disponíveis" + 
+        "\n2. Criar uma nova vaga" + 
+        "\n3. Visualizar uma vaga" +
+        "\n4. Inscrever um(a) candidato(a)" +
+        "\n5. Excluir uma vaga" +
+        "\n6. Sair" 
+
+    )
+    return opcao 
+}
