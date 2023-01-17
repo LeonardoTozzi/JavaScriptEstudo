@@ -24,9 +24,26 @@ function novaVaga() {
         "Nome: " + nome + "\nDescrição: " + descricao + "\nData limite: " + dataLimite
     )
     if (confirmacao) {
-        const novaVaga = { nome, descricao, dataLimite, canditados: [] }
+        const novaVaga = { nome, descricao, dataLimite, candidatos: [] }
         vagas.push(novaVaga)
         alert("Vaga criada.")
     }
 
+}
+
+function exibirVaga() {
+    const indice = prompt("Informe o índice da vaga que deseja exibir: ")
+    const vaga = vagas[indice]
+
+    const candidatoEmTexto = vaga.candidatos.reduce(function (textoFinal, candidato) {
+        return textoFinal + "\n - " + candidato  
+    }, "")
+
+    alert(
+        "Vaga nº " + indice + 
+        "\nNome: " + vaga.nome + 
+        "\nDescrição: " + vaga.descricao + 
+        "\nData limite: " + vaga.dataLimite.length +
+        "\nCandidatos inscritos: " + candidatosEmTexto
+    )
 }
