@@ -1,17 +1,17 @@
 const vagas = []
 
 
+// 
 function listarVagas() {
-    const vagasEmTexto = vagas.reduce(function(textoFinal, vaga, indice){
-        // 1, nome, quantidade de candidato
-        textoFinal += indice + ". "
-        textoFinal += vagas.nome
-        textoFinal += " (" + vaga.candidatos.length + " candidatos)\n"
-        return textoFinal
+    const vagasEmTexto = vagas.reduce((textoFinal, vaga, indice) => {
+      textoFinal += indice + ". "
+      textoFinal += vaga.nome
+      textoFinal += " (" + vaga.candidatos.length + " candidatos)\n"
+      return textoFinal
     }, "")
-
+  
     alert(vagasEmTexto)
-}
+  }
 
 
 function novaVaga() {
@@ -39,7 +39,7 @@ function exibirVaga() {
     }
     const vaga = vagas[indice]
 
-    const candidatoEmTexto = vaga.candidatos.reduce(function (textoFinal, candidato) {
+    const candidatosEmTexto = vaga.candidatos.reduce(function (textoFinal, candidato) {
         return textoFinal + "\n - " + candidato  
     }, "")
 
@@ -47,7 +47,8 @@ function exibirVaga() {
         "Vaga nº " + indice + 
         "\nNome: " + vaga.nome + 
         "\nDescrição: " + vaga.descricao + 
-        "\nData limite: " + vaga.dataLimite.length +
+        "\nData limite: " + vaga.dataLimite +
+        "\nQuantidade de candidatos: " + vaga.candidatos.length +
         "\nCandidatos inscritos: " + candidatosEmTexto
     )
 }
